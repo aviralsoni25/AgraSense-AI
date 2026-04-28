@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "../styles/variables.css";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+@custom-variant dark (&:is(.dark *));
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 0% 0%, rgb(16 185 129 / 12%) 0%, transparent 35%),
+    radial-gradient(circle at 95% 10%, rgb(34 197 94 / 8%) 0%, transparent 40%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.glass-card {
+  background: rgb(255 255 255 / 65%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgb(255 255 255 / 30%);
+}
+
+.dark .glass-card {
+  background: rgba(53, 81, 146, 0.7);
+  border-color: rgb(148 163 184 / 20%);
+}
+
+.hover-lift {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 45px -24px rgb(6 78 59 / 55%);
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
