@@ -83,3 +83,20 @@ You can deploy the built app behind Firebase Hosting + optional Firebase service
 - If Gemini key is missing, APIs return safe fallback insights.
 - If Google Maps key is missing, heatmap page shows configuration fallback message.
 - For Firebase Cloud Messaging, set `NEXT_PUBLIC_FIREBASE_VAPID_KEY` and update `public/firebase-messaging-sw.js` placeholders with your Firebase config.
+
+## ▶️ How to Run the Project
+
+1. Clone the repository:
+   git clone https://github.com/aviralsoni25/AgraSense-AI.git
+
+2. Navigate to the project folder:
+   cd AgraSense-AI
+
+3. Install dependencies:
+   pip install -r requirements.txt
+
+4. Run the application:
+   python app.py
+
+5. Open in browser:
+   http://127.0.0.1:5000
